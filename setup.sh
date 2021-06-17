@@ -17,13 +17,13 @@ else
 fi
 #若上述安装失败，请自行查找原因
 if [ "$?" != '0' ];then
-	echo 'SB：git curl安装失败，请手动安装成功后再次执行'
+	echo 'git curl安装失败，请手动安装成功后再次执行'
 	exit
 fi
 #如果机器首次执行，存在/backend，则跳过git步骤
 if [ ! -d "/backend" ];then
-	mkdir /backend
 	git clone $giturl /backend
+	if [ ! -d "/backend" ];then echo "代码克隆失败，请检查原因";exit;fi
 	cd /backend
 	chmod +x backend
 	mv backend.service /etc/systemd/system/
