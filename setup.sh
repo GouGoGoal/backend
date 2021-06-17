@@ -43,12 +43,7 @@ do
 		A=`echo $i|awk -F '=' '{print $1}'`
 		case $A in 
 		bbr)
-			sed -i '/net.core.default_qdisc/d' /etc/sysctl.conf 
-			sed -i '/net.ipv4.tcp_congestion_control/d' /etc/sysctl.conf
-			echo '#开启BBR
-net.core.default_qdisc=fq
-net.ipv4.tcp_congestion_control=bbr'>>/etc/sysctl.conf
-			sysctl -p
+			curl 'https://raw.githubusercontent.com/GouGoGoal/SHELL/master/sysctl.sh'|bash
 			;;
 		conf)
 			B=`echo $i|awk -F '=' '{print $2}'`
@@ -56,12 +51,33 @@ net.ipv4.tcp_congestion_control=bbr'>>/etc/sysctl.conf
 			cp example.yml $B.yml
 			conf=$B.yml
 			;;
+		state)
+			apt install -y python3 
+			yum install -y python3 
+			B=`echo $i|awk -F '=' '{print $2}'`
+			if [ ! -f "/etc/state.py" ];then
+				mv -f state.py /etc/state.py
+			fi
+			sed -i "s|^USER.*|USER = \"$B\"|g" /etc/state.py
+			echo "[Unit]
+Description=state deamon
+After=rc-local.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /etc/state.py
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target">/etc/systemd/system/state.service
+			systemctl enable state
+			systemctl restart state
+			;;
 		task)
 			if [ ! "`grep 清理 /etc/crontab`" ];then
 				echo '#每天06:00清理日志日志'>>/etc/crontab
 				echo '0 6 * * * root find /var/ -name "*.log.*" -exec rm -rf {} \;'>>/etc/crontab
 				echo '#每天06:00点重启服务'>>/etc/crontab
-				echo "0 6 * * * root for i in \`systemctl|grep backend|grep service|awk '{print \$1}'\`;do systemctl restart \$i;done" >>/etc/crontab
+				echo "0 6 * * * root for i in \`systemctl|grep -E \"backend|state|nginx|sniproxy\"|grep service|awk '{print \$1}'\`;do systemctl restart \$i;done" >>/etc/crontab
 			fi
 			;;
 		esac
