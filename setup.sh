@@ -1,6 +1,6 @@
 #!/bin/bash
 #git地址，-b 是分支
-#giturl='-b backend https://github.com/backend/backend'
+giturl='-b own_xrayr https://github.com/GouGoGoal/backend'
 
 #检测是否是root
 if [ "`id -u`" != 0 ];then echo '请使用root用户执行脚本';exit;fi
@@ -22,8 +22,8 @@ if [ "$?" != '0' ];then
 fi
 #如果机器首次执行，存在/backend，则跳过git步骤
 if [ ! -d "/backend" ];then
-	mkdir /backend
 	git clone $giturl /backend
+	if [ ! -d "/backend" ];then echo "代码克隆失败，请检查原因";exit;fi
 	cd /backend
 	chmod +x backend
 	mv backend.service /etc/systemd/system/
