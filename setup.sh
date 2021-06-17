@@ -58,10 +58,10 @@ net.ipv4.tcp_congestion_control=bbr'>>/etc/sysctl.conf
 			;;
 		task)
 			if [ ! "`grep 清理 /etc/crontab`" ];then
-				echo '#每天05:55清理日志日志'>>/etc/crontab
+				echo '#每天06:00清理日志日志'>>/etc/crontab
 				echo '0 6 * * * root find /var/ -name "*.log.*" -exec rm -rf {} \;'>>/etc/crontab
 				echo '#每天06:00点重启服务'>>/etc/crontab
-				echo "0 6 * * * root for i in \`systemctl |grep -E \"backend\"|grep service|awk '{print \$1}'\`;do systemctl restart \$i;done" >>/etc/crontab
+				echo "0 6 * * * root for i in \`systemctl|grep backend|grep service|awk '{print \$1}'\`;do systemctl restart \$i;done" >>/etc/crontab
 			fi
 			;;
 		esac
