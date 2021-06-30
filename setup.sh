@@ -25,6 +25,7 @@ if [ ! -d "/backend" ];then
 	git clone $giturl /backend
 	if [ ! -d "/backend" ];then echo "代码克隆失败，请检查原因";exit;fi
 	cd /backend
+	bash tls-gen.sh
 	chmod +x backend
 	mv backend.service /etc/systemd/system/
 	mv backend@.service /etc/systemd/system/
