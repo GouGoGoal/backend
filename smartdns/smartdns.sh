@@ -182,7 +182,7 @@ else
 	fi     
 fi
 #忽略对指定DNS的劫持
-if [ $Ignore_DNS != '' ];then 
+if [ "$Ignore_DNS" != '' ];then 
 	for i in $Ignore_DNS;do 
 		iptables -I OUTPUT -d  $i -j ACCEPT
 	done
