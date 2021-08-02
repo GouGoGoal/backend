@@ -181,14 +181,17 @@ else
 		flush_smartdns_conf
 	fi     
 fi
-#忽略对指定DNS的劫持
-if [ "$Ignore_DNS" != '' ];then 
-	for i in $Ignore_DNS;do 
-		iptables -I OUTPUT -d  $i -j ACCEPT
-	done
-fi
 #监测smartdns服务状态，并监测iptables劫持
 if [ "`systemctl status smartdns|grep running`" ];then
+	#忽略对指定DNS的劫持
+	if [ "$Ignore_DNS" != '' ];then 
+		for i in $Ignore_DNS;do 
+			if [ ! "`iptables -nL |grep -w ACCEPT|grep -w $i`" ];then
+				iptables -I OUTPUT -d  $i -j ACCEPT
+			fi
+		done
+	fi
+
 	if [ ! "`iptables -t nat -nL |grep DNAT|grep -w 127.0.0.1:53`" ];then
 		iptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 127.0.0.1:53
 	fi
