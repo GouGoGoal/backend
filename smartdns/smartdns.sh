@@ -186,8 +186,8 @@ if [ "`systemctl status smartdns|grep running`" ];then
 	#忽略对指定DNS的劫持
 	if [ "$Ignore_DNS" != '' ];then 
 		for i in $Ignore_DNS;do 
-			if [ ! "`iptables -nL |grep -w ACCEPT|grep -w $i`" ];then
-				iptables -I OUTPUT -d  $i -j ACCEPT
+			if [ ! "`iptables -t nat -nL |grep -w ACCEPT|grep -w $i`" ];then
+				iptables -t nat -I OUTPUT -d $i -j ACCEPT
 			fi
 		done
 	fi
