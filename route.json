@@ -5,21 +5,39 @@
             "type": "field",
             "outboundTag": "block",
             "ip": [
-                "geoip:private"
+                "geoip:private",
+				"domain:gov.cn",
+				"domain:torproject.org",
+				"domain:27cv.com",
+				"domain:uzzz.org",
+				"domain:zhucinovel.com",
+				"domain:falunaz.net",
+				"domain:falundafa.org",
+				"domain:minghui.org",
+				"domain:epochtimes.com",
+				"domain:dongtaiwang.com",
+				"domain:wujieliulan.com",
+				"domain:mhradio.org",
+				"domain:ntdtv.com",
+				"domain:baidu.com",
+				"domain:360.com",
+				"domain:360.cn",
+				"domain:so.com",
+				"domain:so.cn"
             ]
         },
         {
             "type": "field",
-            "outboundTag": "block",
+            "outboundTag": "warp_out",
             "protocol": [
                 "bittorrent"
             ]
         },
         {
             "type": "field",
-            "outboundTag": "IPv6_out",
+            "outboundTag": "warp_out",
             "domain": [
-                "geosite:netflix"
+                "domain:google111111.com"
             ]
         }
     ]

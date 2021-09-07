@@ -1,5 +1,10 @@
 [
     {
+		"sendThrough": "172.16.0.2",
+        "tag": "warp_out",
+        "protocol": "freedom"
+    },
+    {
         "tag": "IPv4_out",
         "protocol": "freedom"
     },
