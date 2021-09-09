@@ -37,7 +37,10 @@
             "type": "field",
             "outboundTag": "warp_out",
             "domain": [
-                "domain:google111111.com"
+                "domain:x-google.com",
+                "domain:x-googleapis.com",
+                "domain:x-googleusercontent.com",
+                "domain:x-app-measurement.com"
             ]
         }
     ]
