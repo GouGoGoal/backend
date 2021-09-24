@@ -1,11 +1,13 @@
 {
-    "domainStrategy": "IPOnDemand",
-    "rules": [
-        {
-            "type": "field",
-            "outboundTag": "block",
-            "ip": [
-                "geoip:private",
+	"domainStrategy": "IPOnDemand",
+	"rules": [
+		{
+			"type": "field",
+			"outboundTag": "block",
+			"ip": [
+				"geoip:private"
+			],
+			"domain" : [
 				"domain:gov.cn",
 				"domain:torproject.org",
 				"domain:27cv.com",
@@ -24,24 +26,24 @@
 				"domain:360.cn",
 				"domain:so.com",
 				"domain:so.cn"
-            ]
-        },
-        {
-            "type": "field",
-            "outboundTag": "warp_out",
-            "protocol": [
-                "bittorrent"
-            ]
-        },
-        {
-            "type": "field",
-            "outboundTag": "warp_out",
-            "domain": [
-                "domain:x-google.com",
-                "domain:x-googleapis.com",
-                "domain:x-googleusercontent.com",
-                "domain:x-app-measurement.com"
-            ]
-        }
-    ]
+			]
+		},
+		{
+			"type": "field",
+			"outboundTag": "warp_out",
+			"protocol": [
+				"bittorrent"
+			]
+		},
+		{
+			"type": "field",
+			"outboundTag": "warp_out",
+			"domain": [
+				"domain:x-google.com",
+				"domain:x-googleapis.com",
+				"domain:x-googleusercontent.com",
+				"domain:x-app-measurement.com"
+			]
+		}
+	]
 }
