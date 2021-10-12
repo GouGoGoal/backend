@@ -46,6 +46,16 @@ do
 		bbr)
 			curl 'https://raw.githubusercontent.com/GouGoGoal/SHELL/master/sysctl.sh'|bash
 			;;
+		banBT)
+			if [ -f "/etc/rc.local"];then 
+				echo 'bash /backend/banBT.sh' >>/etc/rc.local
+			else 
+				echo '#!/bin/bash
+bash /backend/banBT.sh' >>/etc/rc.local
+				chmod +x /etc/rc.local
+				bash /backend/banBT.sh
+			fi
+			;;
 		conf)
 			B=`echo $i|awk -F '=' '{print $2}'`
 			rm -f $B.yml
