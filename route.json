@@ -30,7 +30,7 @@
 		},
 		{
 			"type": "field",
-			"outboundTag": "warp_out",
+			"outboundTag": "block",
 			"protocol": [
 				"bittorrent"
 			]
