@@ -41,6 +41,15 @@
 		},
 		{
 			"type": "field",
+			"outboundTag": "warp_out",
+			"domain": [
+				"domain:google.com",
+				"domain:googleusercontent.com",
+				"domain:gstatic.com"
+			]
+		},
+		{
+			"type": "field",
 			"outboundTag": "IPv4_out",
 			"ip": [
 				"geoip:telegram",
