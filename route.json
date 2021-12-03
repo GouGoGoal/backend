@@ -114,16 +114,6 @@
 				"domain:huobipool.com", 
 				"domain:haopool.com"
 			]
-		},
-		{
-			"type": "field",
-			"outboundTag": "warp_out",
-			"domain": [
-				"domain:x-google.com",
-				"domain:x-googleapis.com",
-				"domain:x-googleusercontent.com",
-				"domain:x-app-measurement.com"
-			]
 		}
 	]
 }
