@@ -101,12 +101,11 @@
 			"type": "field",
 			"outboundTag": "warp_out",
 			"domain": [
-				"domain:youtube.com",
-				"domain:redirector.googlevideo.com",
 				"domain:google.com",
 				"domain:googleapis.com",
 				"domain:googleusercontent.com",
-				"domain:gstatic.com"
+				"domain:gstatic.com",
+				"domain:google.co.jp"
 			]
 		},
 		{
