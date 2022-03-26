@@ -13,7 +13,7 @@ twip=`DTI unlock.tw.xtls.space`
 hkip=`DTI unlock.hk.xtls.space`
 jpip=`DTI unlock.jp.xtls.space`
 usip=`DTI unlock.us.xtls.space`
-thip=`DTI unlock.th.xtls.space`
+#thip=`DTI unlock.th.xtls.space`
 #sgip=`DTI unlock.sg.xtls.space`
 #cnip=`DTI unlock.cn.xtls.space`
 
@@ -147,9 +147,9 @@ address /paravi.jp/$jpip
 #address /phncdn.com/$jpip
 #------------------------------------
 #美国disneynow disney+
-address /disneynow.com/$usip
-address /disneyplus.com/$usip
-address /go.com/$usip
+#address /disneynow.com/$usip
+#address /disneyplus.com/$usip
+#address /go.com/$usip
 #美国hulu
 address /hulu.com/$usip
 address /huluim.com/$usip
