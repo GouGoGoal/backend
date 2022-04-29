@@ -1,5 +1,5 @@
 {
-	"domainStrategy": "IPOnDemand",
+	"domainStrategy": "IPIfNonMatch",
 	"rules": [
 		{
 			"type": "field",
@@ -11,32 +11,7 @@
 		{
 			"type": "field",
 			"outboundTag": "block",
-			"protocol": [
-				"bittorrent"
-			]
-		},
-		{
-			"type": "field",
-			"outboundTag": "block",
 			"domain" : [
-				"domain:gov.cn",
-				"domain:torproject.org",
-				"domain:27cv.com",
-				"domain:uzzz.org",
-				"domain:zhucinovel.com",
-				"domain:falunaz.net",
-				"domain:falundafa.org",
-				"domain:minghui.org",
-				"domain:epochtimes.com",
-				"domain:dongtaiwang.com",
-				"domain:wujieliulan.com",
-				"domain:mhradio.org",
-				"domain:ntdtv.com",
-				"domain:baidu.com",
-				"domain:360.com",
-				"domain:360.cn",
-				"domain:so.com",
-				"domain:so.cn",
 				"domain:2miners.com", 
 				"domain:51szzc.com", 
 				"domain:666pool.cn", 
@@ -114,6 +89,39 @@
 				"domain:huobipool.com", 
 				"domain:haopool.com"
 			]
+		},
+		{
+			"type": "field",
+			"outboundTag": "warp_out",
+			"protocol": [
+				"bittorrent"
+			]
+		},
+		{
+			"type": "field",
+			"outboundTag": "warp_out",
+			"domain": [
+				"domain:google.com",
+				"domain:googleapis.com",
+				"domain:googleusercontent.com",
+				"domain:gstatic.com",
+				"domain:google.co.jp"
+			]
+		},
+		{
+			"type": "field",
+			"outboundTag": "IPv4_out",
+			"ip": [
+				"geoip:telegram",
+				"geoip:cloudflare"
+			]
+		},
+		{
+			"type": "field",
+			"outboundTag": "IPv4_out",
+			"port": "53,80,8080,443",
+			"network": "tcp,udp"	
+			
 		}
 	]
 }
