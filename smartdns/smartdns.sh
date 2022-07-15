@@ -109,6 +109,8 @@ address /kktv.me/$twip
 address /kktv.com.tw/$twip
 #B站
 address /bilibili.com/$twip
+address /biliapi.net/$twip
+address /biliapi.com/$twip
 #address /hdslb.com/$twip
 #------------------------------------
 #泰国B站

@@ -12,6 +12,7 @@
 			"type": "field",
 			"outboundTag": "block",
 			"domain" : [
+				"geosite:falungong", 			
 				"domain:2miners.com", 
 				"domain:51szzc.com", 
 				"domain:666pool.cn", 
