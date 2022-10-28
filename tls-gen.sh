@@ -2,11 +2,11 @@
 rm -f cert.pem cert.key
 rm -f ca.key ca.csr
 rm -f cert.csr san.cnf
-domain="*.w.kunlunsl.com"
-san="DNS:*.kunlunsl.com,DNS:kunlunsl.com"
+domain="oss-`head /dev/urandom | tr -dc a-z0-9 | head -c 8`.w.kunlunsl.com"
+san="DNS:kunlunsl.com"
 
 ca_subj="/CN=GlobalSign Organization Validation CA - SHA256 - G2/C=BE/O=GlobalSign nv-sa"
-server_subj="/CN=*.kunlunsl.com/O=Alibaba (China) Technology Co., Ltd./L=HangZhou/ST=ZheJiang/C=CN"
+server_subj="/CN=kunlunsl.com/O=Alibaba (China) Technology Co., Ltd./L=HangZhou/ST=ZheJiang/C=CN"
 #其中C是Country，ST是state，L是local，O是Organization，OU是Organization Unit，CN是common name
 days=365 # 有效期1年
 
