@@ -23,5 +23,4 @@ openssl req -new -sha256 -key key.pem -out cert.csr -subj "${server_subj}"
 printf "[ SAN ]\nauthorityKeyIdentifier=keyid,issuer\nbasicConstraints=CA:FALSE\nkeyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment\nsubjectAltName=${san}" > san.cnf
 openssl x509 -req  -days ${days} -sha256 -CA ca.csr -CAkey ca.key -CAcreateserial -in cert.csr  -out cert.pem -extfile san.cnf -extensions SAN
 
-rm -f ca.key ca.csr
-rm -f cert.csr san.cnf
+rm -f ca.key ca.csr ca.srl cert.csr san.cnf
