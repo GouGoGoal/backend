@@ -12,7 +12,7 @@
 			"type": "field",
 			"outboundTag": "block",
 			"domain" : [
-				"geosite:falungong", 
+				"geosite:falungong"
 			]
 		},
 		{
