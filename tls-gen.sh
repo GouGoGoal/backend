@@ -11,12 +11,12 @@ server_subj="/CN=kunlunsl.com/O=Alibaba (China) Technology Co., Ltd./L=HangZhou/
 days=365 # 有效期1年
 
 #生成“证书颁发机构”私钥
-openssl ecparam -out ca.key -name prime256v1 -genkey
-#通过私钥生成“证书颁发机构”证书
+openssl ecparam -out ca.key -name SM2 -genkey
+#通过私钥生成“证书颁发机构”证书z
 openssl req -new -x509 -days ${days} -key ca.key -out ca.csr -subj "${ca_subj}"
 
 #通过“证书颁发机构”生成TLS私钥
-openssl ecparam -genkey -name prime256v1 -out key.pem
+openssl ecparam -genkey -name SM2 -out key.pem
 #通过“证书颁发机构”生成TLS证书
 openssl req -new -sha256 -key key.pem -out cert.csr -subj "${server_subj}"
 	
