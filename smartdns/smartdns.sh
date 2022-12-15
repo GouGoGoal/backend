@@ -65,15 +65,13 @@ speed-check-mode ping,tcp:80
 dualstack-ip-selection no
 #dualstack-ip-selection-threshold 30
 #完全不解析IPV6
-force-AAAA-SOA yes
+#force-AAAA-SOA yes
 #日志级别 error
 log-level error
 #日志位置
 log-file /var/log/smartdns.log
 log-size 128k
 log-num 1
-#ban掉部分域名
-conf-file /etc/ban.conf
 #------------------------------------
 #奈飞
 #address /fast.com/$nfip

@@ -38,7 +38,6 @@ systemctl enable smartdns
 chmod +x $DIR/smartdns.sh
 #移动/etc下
 cp $DIR/smartdns.sh /etc/smartdns.sh
-cp $DIR/ban.conf /etc/ban.conf
 
 #执行一次
 bash /etc/smartdns.sh
