@@ -26,10 +26,9 @@
 			"type": "field",
 			"outboundTag": "warp_out",
 			"domain": [
-				"domain:google.com",
+				"domain:www.google.com",
 				"domain:googleapis.com",
-				"domain:googleusercontent.com",
-				"domain:gstatic.com",
+				"domain:www.gstatic.com",
 				"domain:google.co.jp"
 			]
 		},
