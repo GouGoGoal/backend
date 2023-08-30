@@ -9,10 +9,10 @@ echo `host -4 -t A -W 1 $1 $DNS|sed 1,3d|grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,
 Ignore_DNS=''
 
 #获取当前的流媒体解锁IP，若不解锁某区域的流媒体注释掉即可
-twip=`DTI unlock.tw.xtls.space`
-hkip=`DTI unlock.hk.xtls.space`
-jpip=`DTI unlock.jp.xtls.space`
-usip=`DTI unlock.us.xtls.space`
+#twip=`DTI unlock.tw.xtls.space`
+#hkip=`DTI unlock.hk.xtls.space`
+#jpip=`DTI unlock.jp.xtls.space`
+#usip=`DTI unlock.us.xtls.space`
 #thip=`DTI unlock.th.xtls.space`
 #sgip=`DTI unlock.sg.xtls.space`
 #cnip=`DTI unlock.cn.xtls.space`
